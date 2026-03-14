@@ -378,6 +378,29 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <div className="rounded-2xl border border-slate-200 bg-slate-50 p-8">
+          <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Learn More</p>
+          <div className="mt-6 space-y-4">
+            {[
+              "What is OpenClaw?",
+              "OpenClaw vs. hiring an executive assistant",
+              "How much does OpenClaw setup cost?",
+              "What is a Collison Install?",
+            ].map((item) => (
+              <a
+                key={item}
+                href="#"
+                className="group flex items-center justify-between rounded-lg border border-slate-200 bg-white px-5 py-4 text-slate-800 hover:border-indigo-300"
+              >
+                <span className="font-medium">{item}</span>
+                <span className="text-indigo-700 transition-transform group-hover:translate-x-1">→</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-white py-16">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-3xl font-bold md:text-4xl">Available across Calgary Region</h2>

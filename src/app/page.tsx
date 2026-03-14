@@ -1,22 +1,39 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  SiWhatsapp,
+  SiTelegram,
+  SiDiscord,
+  SiSlack,
+  SiSignal,
+  SiImessage,
+  SiAnthropic,
+  SiOpenai,
+  SiSpotify,
+  SiPhilipshue,
+  SiObsidian,
+  SiX,
+  SiGooglechrome,
+  SiGmail,
+  SiGithub,
+} from "react-icons/si";
 
 const integrations = [
-  "WhatsApp",
-  "Telegram",
-  "Discord",
-  "Slack",
-  "Signal",
-  "iMessage",
-  "Claude",
-  "GPT",
-  "Spotify",
-  "Hue",
-  "Obsidian",
-  "Twitter",
-  "Browser",
-  "Gmail",
-  "GitHub",
+  { name: "WhatsApp", icon: SiWhatsapp, color: "text-[#25D366]" },
+  { name: "Telegram", icon: SiTelegram, color: "text-[#26A5E4]" },
+  { name: "Discord", icon: SiDiscord, color: "text-[#5865F2]" },
+  { name: "Slack", icon: SiSlack, color: "text-[#E01E5A]" },
+  { name: "Signal", icon: SiSignal, color: "text-[#3A76F0]" },
+  { name: "iMessage", icon: SiImessage, color: "text-[#34C759]" },
+  { name: "Claude", icon: SiAnthropic, color: "text-[#D97706]" },
+  { name: "GPT", icon: SiOpenai, color: "text-[#10A37F]" },
+  { name: "Spotify", icon: SiSpotify, color: "text-[#1DB954]" },
+  { name: "Hue", icon: SiPhilipshue, color: "text-[#F59E0B]" },
+  { name: "Obsidian", icon: SiObsidian, color: "text-[#7C3AED]" },
+  { name: "Twitter", icon: SiX, color: "text-[#E5E7EB]" },
+  { name: "Browser", icon: SiGooglechrome, color: "text-[#FBBF24]" },
+  { name: "Gmail", icon: SiGmail, color: "text-[#EA4335]" },
+  { name: "GitHub", icon: SiGithub, color: "text-[#E5E7EB]" },
 ];
 
 const builtFor = [
@@ -225,15 +242,16 @@ export default function Home() {
 
       <section className="border-b border-white/10 bg-[#0b0d12] py-12">
         <div className="mx-auto max-w-7xl px-6">
-          <p className="mb-2 text-cyan-300">⟩</p>
-          <h2 className="text-3xl font-bold md:text-5xl">Works With Everything</h2>
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-            {integrations.map((name) => (
+          <h2 className="text-3xl font-bold md:text-5xl">⟩ Works With Everything</h2>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            {integrations.map(({ name, icon: Icon, color }) => (
               <div
                 key={name}
-                className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-center text-sm text-slate-200"
+                title={name}
+                aria-label={name}
+                className="rounded-xl border border-white/10 bg-white/[0.03] p-3"
               >
-                {name}
+                <Icon className={`h-6 w-6 ${color}`} aria-hidden="true" />
               </div>
             ))}
           </div>

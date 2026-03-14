@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
@@ -27,6 +29,28 @@ export default function Home() {
               View Services
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="border-y border-blue-100 bg-white py-6">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-3 px-6 text-center md:flex-row md:gap-6">
+          <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+            Official OpenClaw Deployment Partner Services
+          </p>
+          <a
+            href="https://openclaw.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 hover:bg-slate-100"
+          >
+            <Image
+              src="/openclaw-logo-text.png"
+              alt="OpenClaw"
+              width={170}
+              height={32}
+              className="h-6 w-auto"
+            />
+          </a>
         </div>
       </section>
 

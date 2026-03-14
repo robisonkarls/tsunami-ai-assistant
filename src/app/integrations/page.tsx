@@ -1,30 +1,38 @@
 import Link from "next/link";
+import {
+  SiWhatsapp,
+  SiTelegram,
+  SiDiscord,
+  SiSlack,
+  SiSignal,
+  SiImessage,
+  SiAnthropic,
+  SiOpenai,
+  SiSpotify,
+  SiPhilipshue,
+  SiObsidian,
+  SiX,
+  SiGooglechrome,
+  SiGmail,
+  SiGithub,
+} from "react-icons/si";
 
-const integrationGroups = [
-  {
-    title: "Messaging",
-    items: ["WhatsApp", "Telegram", "Discord", "Slack", "Signal", "iMessage"],
-  },
-  {
-    title: "AI Models",
-    items: ["Claude", "GPT", "Gemini", "OpenRouter", "Local LLMs"],
-  },
-  {
-    title: "Productivity",
-    items: ["Gmail", "Google Calendar", "Notion", "Obsidian", "Google Drive", "Google Sheets"],
-  },
-  {
-    title: "Developer Tools",
-    items: ["GitHub", "Browser Automation", "Webhooks", "Sentry", "CLI Tools"],
-  },
-  {
-    title: "Business Systems",
-    items: ["HubSpot", "Salesforce", "Zoom", "CRM APIs", "Internal Dashboards"],
-  },
-  {
-    title: "Smart Home & Devices",
-    items: ["Spotify", "Hue", "IoT APIs", "Custom MCP Servers"],
-  },
+const integrations = [
+  { name: "WhatsApp", icon: SiWhatsapp, color: "text-[#25D366]" },
+  { name: "Telegram", icon: SiTelegram, color: "text-[#26A5E4]" },
+  { name: "Discord", icon: SiDiscord, color: "text-[#5865F2]" },
+  { name: "Slack", icon: SiSlack, color: "text-[#E01E5A]" },
+  { name: "Signal", icon: SiSignal, color: "text-[#3A76F0]" },
+  { name: "iMessage", icon: SiImessage, color: "text-[#34C759]" },
+  { name: "Claude", icon: SiAnthropic, color: "text-[#D97706]" },
+  { name: "GPT", icon: SiOpenai, color: "text-[#10A37F]" },
+  { name: "Spotify", icon: SiSpotify, color: "text-[#1DB954]" },
+  { name: "Hue", icon: SiPhilipshue, color: "text-[#F59E0B]" },
+  { name: "Obsidian", icon: SiObsidian, color: "text-[#7C3AED]" },
+  { name: "Twitter", icon: SiX, color: "text-[#E5E7EB]" },
+  { name: "Browser", icon: SiGooglechrome, color: "text-[#FBBF24]" },
+  { name: "Gmail", icon: SiGmail, color: "text-[#EA4335]" },
+  { name: "GitHub", icon: SiGithub, color: "text-[#E5E7EB]" },
 ];
 
 export default function IntegrationsPage() {
@@ -36,10 +44,9 @@ export default function IntegrationsPage() {
           <p className="inline-block rounded-full border border-cyan-300/30 bg-cyan-400/10 px-4 py-1 text-sm font-semibold text-cyan-200">
             Integrations
           </p>
-          <h1 className="mt-4 text-4xl font-bold md:text-6xl">Works With Everything</h1>
+          <h1 className="mt-4 text-4xl font-bold md:text-6xl">⟩ Works With Everything</h1>
           <p className="mx-auto mt-4 max-w-3xl text-slate-300 md:text-lg">
-            OpenClaw-style assistant deployments can connect to messaging, productivity, dev tools,
-            business systems, and custom internal APIs.
+            Same integration lineup shown on the OpenClaw website, represented with full-color app icons.
           </p>
           <div className="mt-8 flex justify-center gap-3">
             <Link
@@ -61,21 +68,16 @@ export default function IntegrationsPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-14">
-        <div className="grid gap-5 md:grid-cols-2">
-          {integrationGroups.map((group) => (
-            <article key={group.title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-              <h2 className="text-2xl font-bold">{group.title}</h2>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-lg border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm text-slate-200"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </article>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
+          {integrations.map(({ name, icon: Icon, color }) => (
+            <div
+              key={name}
+              className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-center"
+              title={name}
+            >
+              <Icon className={`mx-auto h-8 w-8 ${color}`} aria-hidden="true" />
+              <p className="mt-3 text-sm text-slate-300">{name}</p>
+            </div>
           ))}
         </div>
       </section>

@@ -2,7 +2,6 @@ import Image from "next/image";
 import {
   SiGmail,
   SiGooglecalendar,
-  SiMicrosoftoutlook,
   SiSlack,
   SiImessage,
   SiWhatsapp,
@@ -14,6 +13,7 @@ import {
   SiGithub,
   SiGooglesheets,
 } from "react-icons/si";
+import { FaMicrosoft } from "react-icons/fa6";
 
 const builtForProfiles = [
   {
@@ -189,7 +189,7 @@ export default function Home() {
                 {[
                   { name: "Gmail", icon: SiGmail },
                   { name: "Google Calendar", icon: SiGooglecalendar },
-                  { name: "Outlook", icon: SiMicrosoftoutlook },
+                  { name: "Outlook", icon: FaMicrosoft },
                   { name: "Slack", icon: SiSlack },
                   { name: "iMessage", icon: SiImessage },
                   { name: "WhatsApp", icon: SiWhatsapp },

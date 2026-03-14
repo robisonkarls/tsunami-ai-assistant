@@ -179,9 +179,11 @@ const cities = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-slate-900">
-      <section className="bg-gradient-to-r from-blue-700 to-indigo-800 text-white">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-28">
+    <main className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
+      <section className="relative overflow-hidden bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-900 text-white">
+        <div className="absolute -left-20 top-10 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+        <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-cyan-300/10 blur-3xl" />
+        <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-28">
           <p className="mb-4 inline-block rounded-full bg-white/20 px-4 py-1 text-sm font-semibold">
             White-Glove OpenClaw Deployment • Calgary Region
           </p>
@@ -192,20 +194,20 @@ export default function Home() {
             We design and operate always-on OpenClaw assistants for founders and executive teams, with security-first setup, real integrations, and ongoing support.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <a href="#contact" className="rounded-lg bg-white px-6 py-3 font-semibold text-blue-700">Book a Call</a>
-            <a href="#how-it-works" className="rounded-lg border-2 border-white px-6 py-3 font-semibold text-white">How it works</a>
+            <a href="#contact" className="rounded-xl bg-white px-6 py-3 font-semibold text-blue-700 shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-blue-50">Book a Call</a>
+            <a href="#how-it-works" className="rounded-xl border-2 border-white/90 px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-blue-700">How it works</a>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-white py-8">
+      <section className="border-y border-slate-200/70 bg-white/70 py-10 backdrop-blur">
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex flex-col items-center gap-4 text-center">
             <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Powered by OpenClaw Ecosystem</p>
             <Image src="/openclaw-logo-text.png" alt="OpenClaw" width={170} height={32} className="h-6 w-auto" />
           </div>
 
-          <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:p-8">
+          <div className="mt-8 rounded-3xl border border-slate-200/70 bg-white p-6 shadow-sm md:p-8">
             <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
               <div className="text-center md:text-left">
                 <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Connects to</p>
@@ -227,7 +229,7 @@ export default function Home() {
                   { name: "GitHub", icon: SiGithub },
                   { name: "Google Sheets", icon: SiGooglesheets },
                 ].map(({ name, icon: IconComponent }) => (
-                  <div key={name} className="flex items-center justify-center gap-2 rounded-lg border border-blue-100 bg-white px-3 py-2 text-center">
+                  <div key={name} className="flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-center transition hover:bg-white">
                     <IconComponent className="h-4 w-4 text-indigo-700" aria-hidden="true" />
                     <span>{name}</span>
                   </div>
@@ -242,7 +244,7 @@ export default function Home() {
         <h2 className="text-3xl font-bold md:text-4xl">Built for</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {builtFor.map((item) => (
-            <article key={item.title} className="rounded-2xl border border-slate-200 bg-white p-7">
+            <article key={item.title} className="rounded-3xl border border-slate-200/70 bg-white p-7 shadow-sm transition hover:shadow-md">
               <h3 className="text-xl font-semibold text-slate-900">{item.title}</h3>
               <p className="mt-3 text-slate-600 leading-relaxed">{item.body}</p>
             </article>
@@ -259,7 +261,7 @@ export default function Home() {
 
           <div className="mt-10 space-y-4">
             {timeline.map((item) => (
-              <div key={item.time} className="rounded-xl border border-slate-200 bg-white p-5">
+              <div key={item.time} className="rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm">
                 <p className="text-sm font-semibold uppercase tracking-wide text-indigo-700">{item.time}</p>
                 <p className="mt-2 text-slate-700">{item.action}</p>
               </div>
@@ -284,7 +286,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold md:text-4xl">How it works</h2>
           <div className="mt-10 space-y-6">
             {howItWorks.map((item) => (
-              <article key={item.step} className="rounded-2xl border border-slate-200 bg-white p-8">
+              <article key={item.step} className="rounded-3xl border border-slate-200/70 bg-white p-8 shadow-sm">
                 <div className="flex items-start gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-indigo-700 text-lg font-bold text-white">{item.step}</div>
                   <div>
@@ -302,7 +304,7 @@ export default function Home() {
         <h2 className="text-3xl font-bold md:text-4xl">Why teams hire us</h2>
         <div className="mt-8 space-y-3">
           {whyUs.map((line) => (
-            <div key={line} className="rounded-xl border border-slate-200 bg-white p-5 text-slate-700">• {line}</div>
+            <div key={line} className="rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm text-slate-700">• {line}</div>
           ))}
         </div>
       </section>
@@ -317,7 +319,7 @@ export default function Home() {
               "The hardening alone was worth it.",
               "Super helpful in making sense of OpenClaw, integrations, memory, and workflows.",
             ].map((quote) => (
-              <blockquote key={quote} className="rounded-xl border border-slate-200 bg-slate-50 p-5 text-slate-700">
+              <blockquote key={quote} className="rounded-2xl border border-slate-200/70 bg-white p-5 text-slate-700 shadow-sm">
                 “{quote}”
               </blockquote>
             ))}
@@ -329,7 +331,7 @@ export default function Home() {
         <h2 className="text-3xl font-bold md:text-4xl">Security-first by design</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {security.map((item) => (
-            <div key={item} className="rounded-xl border border-slate-200 bg-white p-6 text-slate-700">✓ {item}</div>
+            <div key={item} className="rounded-2xl border border-slate-200/70 bg-white p-6 text-slate-700 shadow-sm">✓ {item}</div>
           ))}
         </div>
       </section>
@@ -339,7 +341,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold md:text-4xl">After you purchase</h2>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {afterPurchase.map((item) => (
-              <article key={item.label} className="rounded-2xl border border-slate-200 bg-white p-6">
+              <article key={item.label} className="rounded-3xl border border-slate-200/70 bg-white p-6 shadow-sm">
                 <h3 className="text-lg font-bold text-indigo-700">{item.label}</h3>
                 <p className="mt-3 text-slate-600">{item.body}</p>
               </article>
@@ -349,7 +351,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="rounded-2xl border border-green-200 bg-green-50 p-8">
+        <div className="rounded-3xl border border-emerald-200 bg-emerald-50 p-8 shadow-sm">
           <h2 className="text-3xl font-bold text-green-900">100% satisfaction guarantee</h2>
           <p className="mt-3 text-green-800">
             If you’re not happy with the setup, we’ll make it right. We stand behind implementation quality and long-term support.
@@ -388,7 +390,7 @@ export default function Home() {
         <h2 className="text-3xl font-bold md:text-4xl">FAQ</h2>
         <div className="mt-8 space-y-4">
           {faqs.map((faq) => (
-            <details key={faq.q} className="rounded-xl border border-slate-200 bg-white p-6">
+            <details key={faq.q} className="rounded-2xl border border-slate-200/70 bg-white p-6 shadow-sm">
               <summary className="cursor-pointer text-lg font-semibold text-blue-800">{faq.q}</summary>
               <p className="mt-3 text-slate-600">{faq.a}</p>
             </details>
@@ -397,7 +399,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="rounded-2xl border border-slate-200 bg-slate-50 p-8">
+        <div className="rounded-3xl border border-slate-200/70 bg-white p-8 shadow-sm">
           <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Learn More</p>
           <p className="mt-3 max-w-3xl text-slate-600">
             Deep-dive resources for leadership teams evaluating implementation approach, cost, and operating model.
@@ -428,7 +430,7 @@ export default function Home() {
               <a
                 key={item.title}
                 href={item.href}
-                className="group flex items-center justify-between rounded-lg border border-slate-200 bg-white px-5 py-4 text-slate-800 hover:border-indigo-300"
+                className="group flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-indigo-300 hover:bg-white"
               >
                 <div>
                   <p className="font-medium">{item.title}</p>
@@ -449,19 +451,19 @@ export default function Home() {
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {cities.map((city) => (
-              <div key={city} className="rounded-lg border border-blue-100 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700">{city}</div>
+              <div key={city} className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm">{city}</div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="contact" className="bg-gradient-to-r from-blue-700 to-indigo-800 py-16 text-white">
+      <section id="contact" className="relative overflow-hidden bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-900 py-16 text-white">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="text-3xl font-bold md:text-4xl">Ready to launch your assistant stack?</h2>
           <p className="mt-4 text-lg text-blue-100">
             Book a discovery call and we’ll map integrations, priorities, and your rollout plan.
           </p>
-          <a href="https://cal.com" className="mt-8 inline-block rounded-lg bg-white px-6 py-3 font-semibold text-blue-700 hover:bg-blue-50">
+          <a href="https://cal.com" className="mt-8 inline-block rounded-xl bg-white px-6 py-3 font-semibold text-blue-700 shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-blue-50">
             Book a Discovery Call
           </a>
         </div>

@@ -342,8 +342,28 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-6 py-16">
         <h2 className="text-3xl font-bold md:text-4xl">Already running OpenClaw?</h2>
         <p className="mt-4 max-w-4xl text-slate-600 leading-relaxed">
-          We can audit an existing install, fix security gaps, improve hardening, and migrate to managed operations without rebuilding from scratch.
+          Many teams come with a working install that has security gaps. We audit your setup, fix hardening issues, improve integration safety, and migrate you to managed operations without rebuilding from scratch.
         </p>
+      </section>
+
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="text-3xl font-bold md:text-4xl">Implementation & pricing notes</h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+              <h3 className="text-xl font-bold text-slate-900">Delivery model</h3>
+              <p className="mt-3 text-slate-600">
+                One-time setup fee with 14-day hypercare. Ongoing support is handled through Managed Care plans.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+              <h3 className="text-xl font-bold text-slate-900">Infrastructure options</h3>
+              <p className="mt-3 text-slate-600">
+                Most teams deploy on cloud VPS for lower cost and easy maintenance. Mac Mini is available for iMessage or local-hardware preference.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-16">
@@ -362,7 +382,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-3xl font-bold md:text-4xl">Available across Calgary Region</h2>
           <p className="mt-3 max-w-3xl text-slate-600">
-            Remote-first deployment with optional local support across Calgary and surrounding communities.
+            Remote-first deployment with optional local support across Calgary and surrounding communities. Don’t see your city? Book a call.
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {cities.map((city) => (

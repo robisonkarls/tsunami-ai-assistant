@@ -124,7 +124,7 @@ const calgaryRegionCities = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900">
+    <main className="min-h-screen bg-white text-slate-900">
       <section className="relative overflow-hidden bg-gradient-to-r from-blue-700 to-indigo-800 text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.2),transparent_45%)]" />
         <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-28">
@@ -215,37 +215,32 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <h2 className="text-3xl font-bold md:text-4xl">Built For</h2>
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <h2 className="text-3xl font-bold md:text-4xl">Built for</h2>
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
           {builtForProfiles.map((profile) => (
             <article
               key={profile.title}
-              className="rounded-xl border border-blue-100 bg-white p-6 shadow-sm"
+              className="rounded-2xl border border-slate-200 bg-white p-7"
             >
-              <h3 className="text-xl font-semibold text-blue-800">{profile.title}</h3>
-              <p className="mt-3 text-slate-600">{profile.body}</p>
+              <h3 className="text-xl font-semibold text-slate-900">{profile.title}</h3>
+              <p className="mt-3 text-slate-600 leading-relaxed">{profile.body}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="bg-white py-16">
+      <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-3xl font-bold md:text-4xl">Always On, Always Working</h2>
-          <p className="mt-4 max-w-4xl text-lg text-slate-600">
+          <p className="mt-4 max-w-4xl text-lg text-slate-600 leading-relaxed">
             Unlike chat-only tools, your OpenClaw assistant runs 24/7 on dedicated infrastructure. It wakes up every 30 minutes, checks your email, calendar, and connected tools, then takes action proactively — without waiting for you to prompt it.
           </p>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="mt-10 space-y-4">
             {timeline.map((item) => (
-              <div
-                key={item.time}
-                className="rounded-xl border border-slate-200 bg-slate-50 p-5"
-              >
-                <p className="text-sm font-semibold uppercase tracking-wide text-indigo-700">
-                  {item.time}
-                </p>
+              <div key={item.time} className="rounded-xl border border-slate-200 bg-white p-5">
+                <p className="text-sm font-semibold uppercase tracking-wide text-indigo-700">{item.time}</p>
                 <p className="mt-2 text-slate-700">{item.action}</p>
               </div>
             ))}
@@ -276,34 +271,40 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="how-it-works" className="bg-white py-16">
+      <section id="how-it-works" className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-3xl font-bold md:text-4xl">How it works</h2>
 
-          <div className="mt-10 space-y-8">
-            <article className="rounded-2xl border border-slate-200 bg-slate-50 p-8">
-              <p className="text-3xl font-bold text-indigo-700">1</p>
-              <h3 className="mt-4 text-2xl font-bold text-slate-900">Kickoff call</h3>
-              <p className="mt-4 text-lg text-slate-700">
-                We discuss your goals, map your integrations (email, calendar, CRM, messaging), and plan your agent&apos;s workflows. You tell us what to automate — we handle the rest.
-              </p>
-            </article>
-
-            <article className="rounded-2xl border border-slate-200 bg-slate-50 p-8">
-              <p className="text-3xl font-bold text-indigo-700">2</p>
-              <h3 className="mt-4 text-2xl font-bold text-slate-900">Deploy & harden</h3>
-              <p className="mt-4 text-lg text-slate-700">
-                We set up your VPS or Mac Mini, install OpenClaw, configure Composio for secure OAuth, connect your tools, set up Docker sandboxing, firewall rules, and cron jobs. You go live same day.
-              </p>
-            </article>
-
-            <article className="rounded-2xl border border-slate-200 bg-slate-50 p-8">
-              <p className="text-3xl font-bold text-indigo-700">3</p>
-              <h3 className="mt-4 text-2xl font-bold text-slate-900">14-day hypercare</h3>
-              <p className="mt-4 text-lg text-slate-700">
-                We tune workflows, expand permissions as you build trust, fix edge cases, and make sure everything runs smoothly. Dedicated Slack channel for direct support.
-              </p>
-            </article>
+          <div className="mt-10 space-y-6">
+            {[
+              {
+                step: "1",
+                title: "Kickoff call",
+                body: "We discuss your goals, map your integrations (email, calendar, CRM, messaging), and plan your agent's workflows. You tell us what to automate — we handle the rest.",
+              },
+              {
+                step: "2",
+                title: "Deploy & harden",
+                body: "We set up your VPS or Mac Mini, install OpenClaw, configure Composio for secure OAuth, connect your tools, set up Docker sandboxing, firewall rules, and cron jobs. You go live same day.",
+              },
+              {
+                step: "3",
+                title: "14-day hypercare",
+                body: "We tune workflows, expand permissions as you build trust, fix edge cases, and make sure everything runs smoothly. Dedicated Slack channel for direct support.",
+              },
+            ].map((item) => (
+              <article key={item.step} className="rounded-2xl border border-slate-200 bg-white p-8">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-indigo-700 text-lg font-bold text-white">
+                    {item.step}
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-slate-900">{item.title}</h3>
+                    <p className="mt-3 text-lg leading-relaxed text-slate-700">{item.body}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

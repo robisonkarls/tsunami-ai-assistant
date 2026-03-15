@@ -199,13 +199,13 @@ export default function Home() {
               height={28}
               className="h-6 w-auto"
             />
-            <span className="text-xs uppercase tracking-wider text-cyan-600 dark:text-cyan-300">Calgary Services</span>
+            <span className="text-xs uppercase tracking-wider oc-accent">Calgary Services</span>
           </div>
           <div className="flex items-center gap-3">
             <ThemeToggle />
             <Link
             href="#contact"
-            className="rounded-xl border border-cyan-300/40 px-4 py-2 text-sm font-semibold oc-accent transition hover:bg-cyan-300/10"
+            className="rounded-xl border border-cyan-300/40 px-4 py-2 text-sm font-semibold oc-accent transition hover:bg-cyan-300/10 hover:-translate-y-0.5"
           >
             Book a Call
           </Link>
@@ -238,7 +238,7 @@ export default function Home() {
             </Link>
             <Link
               href="#how-it-works"
-              className="rounded-xl border border-slate-300 px-6 py-3 font-semibold text-slate-900 transition hover:bg-slate-100 dark:border-white/20 dark:text-white dark:hover:bg-white/10"
+              className="rounded-xl border border-[color:var(--border-subtle)] px-6 py-3 font-semibold oc-text-secondary transition hover:-translate-y-0.5 hover:bg-slate-100 dark:hover:bg-white/10"
             >
               See How It Works
             </Link>
@@ -303,7 +303,7 @@ export default function Home() {
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {alwaysOn.map((item) => (
               <div key={item.time} className="rounded-2xl oc-surface p-5">
-                <p className="text-sm font-semibold uppercase tracking-wide text-cyan-300">{item.time}</p>
+                <p className="text-sm font-semibold uppercase tracking-wide oc-accent">{item.time}</p>
                 <p className="mt-2 oc-text-secondary">{item.action}</p>
               </div>
             ))}
@@ -393,7 +393,7 @@ export default function Home() {
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {afterPurchase.map((item) => (
               <article key={item.label} className="rounded-2xl oc-surface p-6">
-                <h3 className="text-lg font-bold text-cyan-300">{item.label}</h3>
+                <h3 className="text-lg font-bold oc-accent">{item.label}</h3>
                 <p className="mt-2 oc-text-secondary">{item.body}</p>
               </article>
             ))}
@@ -434,7 +434,7 @@ export default function Home() {
                 className="group flex items-center justify-between rounded-xl oc-surface px-5 py-4 transition hover:-translate-y-0.5 hover:border-cyan-300/40 hover:bg-slate-200 dark:hover:bg-white/[0.06]"
               >
                 <span className="font-medium">{item.title}</span>
-                <span className="text-cyan-300 transition-transform group-hover:translate-x-1">→</span>
+                <span className="oc-accent transition-transform group-hover:translate-x-1">→</span>
               </Link>
             ))}
           </div>

@@ -183,11 +183,11 @@ export default function IntegrationsPage() {
           <p className="inline-block rounded-full border border-cyan-300/30 bg-cyan-400/10 px-4 py-1 text-sm font-semibold oc-accent">
             Integrations
           </p>
-          <h1 className="mt-4 text-4xl font-bold md:text-6xl">⟩ Works With Everything</h1>
+          <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-7xl">⟩ Works With Everything</h1>
           <p className="mx-auto mt-4 max-w-3xl oc-text-secondary md:text-lg">
             Complete integration listing organized by category to mirror the OpenClaw integrations experience.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 md:gap-4">
             <ThemeToggle />
             <Link
               href="/"
@@ -207,20 +207,20 @@ export default function IntegrationsPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-14">
-        <div className="space-y-10">
+      <section className="mx-auto max-w-7xl px-6 py-20">
+        <div className="space-y-14">
           {categories.map((category) => (
             <article key={category.title}>
-              <h2 className="text-2xl font-bold md:text-3xl">⟩ {category.title}</h2>
-              <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5 xl:grid-cols-6">
+              <h2 className="text-2xl font-bold tracking-tight md:text-4xl">⟩ {category.title}</h2>
+              <div className="mt-6 grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-5 xl:grid-cols-6">
                 {category.items.map(({ name, icon: Icon, color }) => (
                   <div
                     key={name}
-                    className="rounded-2xl border oc-surface p-4 text-center"
+                    className="rounded-2xl oc-surface p-5 text-center"
                     title={name}
                   >
-                    <Icon className={`mx-auto h-8 w-8 ${color}`} aria-hidden="true" />
-                    <p className="mt-2 text-xs oc-text-secondary">{name}</p>
+                    <Icon className={`mx-auto h-9 w-9 ${color}`} aria-hidden="true" />
+                    <p className="mt-2 text-sm oc-text-secondary">{name}</p>
                   </div>
                 ))}
               </div>

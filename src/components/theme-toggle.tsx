@@ -1,5 +1,6 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
 
 const options = [
@@ -10,6 +11,15 @@ const options = [
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+
+  if (!mounted) {
+    return <div className="h-9 w-[204px]" aria-hidden="true" />;
+  }
 
   return (
     <div className="inline-flex rounded-xl border border-slate-300 bg-white/80 p-1 text-xs dark:border-white/20 dark:bg-black/30">

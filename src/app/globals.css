@@ -48,9 +48,23 @@ body {
 }
 
 .oc-page {
-  background: radial-gradient(1200px 500px at 50% -120px, color-mix(in srgb, var(--cyan-bright) 12%, transparent), transparent 70%),
+  background:
+    radial-gradient(900px 380px at 18% 18%, color-mix(in srgb, var(--coral-bright) 14%, transparent), transparent 60%),
+    radial-gradient(900px 420px at 82% 18%, color-mix(in srgb, var(--cyan-bright) 14%, transparent), transparent 62%),
     linear-gradient(to bottom, var(--bg-deep), var(--bg-surface));
   color: var(--text-primary);
+}
+
+.dark .oc-page {
+  background:
+    radial-gradient(900px 380px at 18% 18%, color-mix(in srgb, var(--coral-bright) 18%, transparent), transparent 62%),
+    radial-gradient(900px 420px at 82% 18%, color-mix(in srgb, var(--cyan-bright) 18%, transparent), transparent 64%),
+    radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.65), transparent),
+    radial-gradient(1px 1px at 60px 120px, rgba(255, 255, 255, 0.45), transparent),
+    radial-gradient(1px 1px at 180px 80px, rgba(255, 255, 255, 0.55), transparent),
+    radial-gradient(1px 1px at 300px 180px, rgba(255, 255, 255, 0.4), transparent),
+    linear-gradient(to bottom, #040710, #050810 40%, #0a0f1a);
+  background-size: auto, auto, 340px 220px, 340px 220px, 340px 220px, 340px 220px, auto;
 }
 
 .oc-section {

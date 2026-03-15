@@ -189,37 +189,56 @@ const quotes = [
 export default function Home() {
   return (
     <main className="min-h-screen oc-page">
-      <div className="mx-auto flex max-w-7xl justify-end px-6 py-4">
-        <ThemeToggle />
-      </div>
+      <header className="sticky top-0 z-20 border-b border-[color:var(--border-subtle)] bg-white/70 backdrop-blur-xl dark:bg-black/30">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-6 py-4">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/openclaw-logo-text.png"
+              alt="OpenClaw"
+              width={140}
+              height={28}
+              className="h-6 w-auto"
+            />
+            <span className="text-xs uppercase tracking-wider oc-accent">Calgary Services</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <Link
+            href="#contact"
+            className="rounded-xl border border-cyan-300/40 px-4 py-2 text-sm font-semibold oc-accent transition hover:bg-cyan-300/10 hover:-translate-y-0.5"
+          >
+            Book a Call
+          </Link>
+          </div>
+        </div>
+      </header>
 
       <section className="relative overflow-hidden oc-section">
-        <div className="relative mx-auto max-w-4xl px-6 pb-20 pt-6 text-center md:pb-24">
-          <Image
-            src="/openclaw-logo-text.png"
-            alt="OpenClaw"
-            width={320}
-            height={72}
-            className="mx-auto h-16 w-auto md:h-20"
-          />
-          <p className="mt-6 text-sm font-semibold uppercase tracking-[0.22em] text-[color:var(--coral-bright)] md:text-base">
+        <div className="absolute -top-20 left-1/2 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-cyan-500/15 blur-3xl" />
+        <div className="absolute right-0 top-20 h-80 w-80 rounded-full bg-indigo-500/20 blur-3xl" />
+
+        <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
+          <p className="inline-block rounded-full border border-cyan-300/30 bg-cyan-400/10 px-4 py-1 text-sm font-semibold oc-accent">
             The AI that actually does things.
           </p>
-          <p className="mx-auto mt-4 max-w-3xl text-lg oc-text-secondary">
-            Clears your inbox, sends emails, manages your calendar, checks you in for flights.
-            <br className="hidden md:block" />
-            All from WhatsApp, Telegram, or any chat app you already use.
+          <h1 className="mt-6 max-w-5xl text-4xl font-bold leading-tight tracking-tight md:text-7xl">
+            <span className="bg-gradient-to-br from-[color:var(--text-primary)] via-[color:var(--coral-bright)] to-[color:var(--cyan-bright)] bg-clip-text text-transparent">
+              Build an Always-On Executive Assistant Stack for Your Team
+            </span>
+          </h1>
+          <p className="mt-6 max-w-3xl text-lg oc-text-secondary md:text-xl">
+            Clears inboxes, sends follow-ups, manages calendars, and runs proactive workflows — all from chat apps your team already uses.
           </p>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-10 flex flex-wrap gap-4">
             <Link
               href="#contact"
-              className="rounded-full bg-[color:var(--coral-bright)] px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+              className="rounded-xl bg-cyan-300 px-6 py-3 font-semibold text-slate-900 shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 hover:bg-cyan-200"
             >
               Start Deployment
             </Link>
             <Link
               href="#how-it-works"
-              className="rounded-full border border-[color:var(--border-subtle)] px-6 py-3 text-sm font-semibold oc-text-secondary transition hover:-translate-y-0.5 hover:bg-white/60 dark:hover:bg-white/10"
+              className="rounded-xl border border-[color:var(--border-subtle)] px-6 py-3 font-semibold oc-text-secondary transition hover:-translate-y-0.5 hover:bg-slate-100 dark:hover:bg-white/10"
             >
               See How It Works
             </Link>
@@ -323,12 +342,10 @@ export default function Home() {
 
       <section className="oc-section py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl font-bold tracking-tight md:text-5xl">
-            <span className="mr-2 text-[color:var(--coral-bright)]">⟩</span>What People Say
-          </h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <h2 className="text-3xl font-bold tracking-tight md:text-6xl">What people are saying</h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {quotes.map((q) => (
-              <blockquote key={q} className="rounded-2xl oc-surface p-5 text-sm oc-text-secondary">
+              <blockquote key={q} className="rounded-2xl oc-surface p-6 oc-text-secondary">
                 “{q}”
               </blockquote>
             ))}

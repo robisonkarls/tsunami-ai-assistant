@@ -8,7 +8,7 @@ export default function Page() {
         <div className="absolute right-0 top-10 h-64 w-64 rounded-full bg-[color:var(--cyan-bright)]/20 blur-3xl" />
         <div className="relative mx-auto max-w-4xl px-6 py-16">
           <p className="text-sm font-semibold uppercase tracking-wide oc-accent">Learn More</p>
-          <h1 className="mt-3 text-4xl font-bold leading-tight md:text-6xl">What is OpenClaw?</h1>
+          <h1 className="mt-3 text-3xl font-bold leading-tight md:text-4xl">What is OpenClaw?</h1>
           <Link
             href="/"
             className="mt-6 inline-block rounded-xl border border-[color:var(--border-subtle)] px-4 py-2 text-sm font-semibold oc-accent transition hover:bg-[color:var(--surface-card-strong)]"

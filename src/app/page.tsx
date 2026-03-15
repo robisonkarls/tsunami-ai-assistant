@@ -221,12 +221,12 @@ export default function Home() {
           <p className="inline-block rounded-full border border-[color:var(--coral-bright)]/30 bg-[color:var(--coral-bright)]/10 px-4 py-1 text-sm font-semibold oc-accent">
             The AI that actually does things.
           </p>
-          <h1 className="mt-6 max-w-5xl text-4xl font-bold leading-tight tracking-tight md:text-7xl">
+          <h1 className="mt-6 max-w-5xl text-3xl font-bold leading-tight tracking-tight md:text-4xl">
             <span className="bg-gradient-to-br from-[color:var(--text-primary)] via-[color:var(--coral-bright)] to-[color:var(--cyan-bright)] bg-clip-text text-transparent">
               Build an Always-On Executive Assistant Stack for Your Team
             </span>
           </h1>
-          <p className="mt-6 max-w-3xl text-lg oc-text-secondary md:text-xl">
+          <p className="mt-6 max-w-3xl text-base oc-text-secondary md:text-lg">
             Clears inboxes, sends follow-ups, manages calendars, and runs proactive workflows — all from chat apps your team already uses.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
@@ -248,7 +248,7 @@ export default function Home() {
 
       <section className="oc-section bg-[color:var(--surface-card)]/50 py-14">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl font-bold tracking-tight md:text-6xl">⟩ Works With Everything</h2>
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">⟩ Works With Everything</h2>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             {integrations.map(({ name, icon: Icon, color }) => (
               <div
@@ -282,7 +282,7 @@ export default function Home() {
 
       <section className="oc-section py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl font-bold tracking-tight md:text-6xl">Built for</h2>
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">Built for</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {builtFor.map((item) => (
               <article key={item.title} className="rounded-2xl oc-surface p-6">
@@ -296,7 +296,7 @@ export default function Home() {
 
       <section className="oc-section py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl font-bold tracking-tight md:text-6xl">Always on, always working</h2>
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">Always on, always working</h2>
           <p className="mt-4 max-w-4xl oc-text-secondary">
             Your assistant runs 24/7 on dedicated infrastructure. It proactively checks key systems and takes action — without waiting for prompts.
           </p>
@@ -316,7 +316,7 @@ export default function Home() {
 
       <section className="oc-section py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl font-bold tracking-tight md:text-6xl">What&apos;s an Executive Agent?</h2>
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">What&apos;s an Executive Agent?</h2>
           <p className="mt-4 max-w-5xl oc-text-secondary">
             One Executive Agent equals one primary identity boundary (CEO, Sales, Finance, EA, etc.). Most teams deploy 2–6 assistants that coordinate through workflows while preserving role-specific access.
           </p>
@@ -325,14 +325,14 @@ export default function Home() {
 
       <section id="how-it-works" className="oc-section py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl font-bold tracking-tight md:text-6xl">How it works</h2>
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">How it works</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {steps.map((s) => (
               <article key={s.number} className="rounded-2xl oc-surface p-6">
                 <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--coral-bright)] font-bold text-white">
                   {s.number}
                 </div>
-                <h3 className="text-2xl font-bold">{s.title}</h3>
+                <h3 className="text-xl font-bold">{s.title}</h3>
                 <p className="mt-3 oc-text-secondary">{s.body}</p>
               </article>
             ))}
@@ -342,7 +342,7 @@ export default function Home() {
 
       <section className="oc-section py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl font-bold tracking-tight md:text-6xl">What people are saying</h2>
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">What people are saying</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {quotes.map((q) => (
               <blockquote key={q} className="rounded-2xl oc-surface p-6 oc-text-secondary">
@@ -356,7 +356,7 @@ export default function Home() {
       <section className="oc-section py-20">
         <div className="mx-auto grid max-w-7xl gap-6 px-6 md:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight md:text-6xl">Why teams hire us</h2>
+            <h2 className="text-xl font-bold tracking-tight md:text-4xl">Why teams hire us</h2>
             <div className="mt-6 space-y-3">
               {whyUs.map((line) => (
                 <div key={line} className="rounded-xl oc-surface p-4 oc-text-secondary">
@@ -366,7 +366,7 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <h2 className="text-3xl font-bold tracking-tight md:text-6xl">Security-first by design</h2>
+            <h2 className="text-xl font-bold tracking-tight md:text-4xl">Security-first by design</h2>
             <div className="mt-6 space-y-3">
               {security.map((line) => (
                 <div key={line} className="rounded-xl oc-surface p-4 oc-text-secondary">
@@ -380,7 +380,7 @@ export default function Home() {
 
       <section className="oc-section py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl font-bold tracking-tight md:text-6xl">Already running OpenClaw?</h2>
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">Already running OpenClaw?</h2>
           <p className="mt-4 max-w-4xl oc-text-secondary">
             We can audit your existing setup, fix security gaps, improve reliability, and migrate you to managed operations without rebuilding from scratch.
           </p>
@@ -389,7 +389,7 @@ export default function Home() {
 
       <section className="oc-section py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl font-bold tracking-tight md:text-6xl">After you purchase</h2>
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">After you purchase</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {afterPurchase.map((item) => (
               <article key={item.label} className="rounded-2xl oc-surface p-6">
@@ -403,11 +403,11 @@ export default function Home() {
 
       <section className="oc-section py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl font-bold tracking-tight md:text-6xl">FAQ</h2>
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">FAQ</h2>
           <div className="mt-10 space-y-4">
             {faqs.map((faq) => (
               <details key={faq.q} className="rounded-xl oc-surface p-5">
-                <summary className="cursor-pointer text-lg font-semibold oc-accent">{faq.q}</summary>
+                <summary className="cursor-pointer text-base font-semibold oc-accent">{faq.q}</summary>
                 <p className="mt-3 oc-text-secondary">{faq.a}</p>
               </details>
             ))}
@@ -417,7 +417,7 @@ export default function Home() {
 
       <section className="oc-section py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl font-bold tracking-tight md:text-6xl">Learn more</h2>
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">Learn more</h2>
           <div className="mt-10 space-y-4">
             {[
               { title: "What is OpenClaw?", href: "/learn-more/what-is-openclaw" },
@@ -443,7 +443,7 @@ export default function Home() {
 
       <section className="oc-section py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl font-bold tracking-tight md:text-6xl">Available across Calgary Region</h2>
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">Available across Calgary Region</h2>
           <p className="mt-4 oc-text-secondary">Remote-first deployment with optional local support. Don&apos;t see your city? Book a call.</p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
             {cities.map((city) => (
@@ -457,7 +457,7 @@ export default function Home() {
 
       <section id="contact" className="py-20">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-3xl font-bold tracking-tight md:text-6xl">Ready to go live?</h2>
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">Ready to go live?</h2>
           <p className="mx-auto mt-4 max-w-2xl oc-text-secondary">
             We can deploy this stack for your Calgary team with security-first implementation and managed support.
           </p>

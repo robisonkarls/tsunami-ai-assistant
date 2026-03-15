@@ -183,7 +183,7 @@ export default function IntegrationsPage() {
           <p className="inline-block rounded-full border border-[color:var(--coral-bright)]/30 bg-[color:var(--coral-bright)]/10 px-4 py-1 text-sm font-semibold oc-accent">
             Integrations
           </p>
-          <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-7xl">⟩ Works With Everything</h1>
+          <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-4xl">⟩ Works With Everything</h1>
           <p className="mx-auto mt-4 max-w-3xl oc-text-secondary md:text-lg">
             Complete integration listing organized by category to mirror the OpenClaw integrations experience.
           </p>
@@ -211,7 +211,7 @@ export default function IntegrationsPage() {
         <div className="space-y-14">
           {categories.map((category) => (
             <article key={category.title}>
-              <h2 className="text-2xl font-bold tracking-tight md:text-4xl">⟩ {category.title}</h2>
+              <h2 className="text-xl font-bold tracking-tight md:text-4xl">⟩ {category.title}</h2>
               <div className="mt-6 grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-5 xl:grid-cols-6">
                 {category.items.map(({ name, icon: Icon, color }) => (
                   <div

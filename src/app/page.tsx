@@ -205,7 +205,7 @@ export default function Home() {
             <ThemeToggle />
             <Link
             href="#contact"
-            className="rounded-xl border border-cyan-300/40 px-4 py-2 text-sm font-semibold oc-accent transition hover:bg-cyan-300/10 hover:-translate-y-0.5"
+            className="rounded-xl px-4 py-2 text-sm font-semibold oc-btn-secondary oc-accent transition hover:-translate-y-0.5"
           >
             Book a Call
           </Link>
@@ -218,7 +218,7 @@ export default function Home() {
         <div className="absolute right-0 top-20 h-80 w-80 rounded-full bg-indigo-500/20 blur-3xl" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
-          <p className="inline-block rounded-full border border-cyan-300/30 bg-cyan-400/10 px-4 py-1 text-sm font-semibold oc-accent">
+          <p className="inline-block rounded-full border border-[color:var(--coral-bright)]/30 bg-[color:var(--coral-bright)]/10 px-4 py-1 text-sm font-semibold oc-accent">
             The AI that actually does things.
           </p>
           <h1 className="mt-6 max-w-5xl text-4xl font-bold leading-tight tracking-tight md:text-7xl">
@@ -232,7 +232,7 @@ export default function Home() {
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
               href="#contact"
-              className="rounded-xl bg-cyan-300 px-6 py-3 font-semibold text-slate-900 shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 hover:bg-cyan-200"
+              className="rounded-xl px-6 py-3 font-semibold transition hover:-translate-y-0.5 oc-btn-primary"
             >
               Start Deployment
             </Link>
@@ -264,7 +264,7 @@ export default function Home() {
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               href="/integrations"
-              className="rounded-xl bg-cyan-300 px-5 py-2.5 text-sm font-semibold text-slate-900 transition hover:bg-cyan-200"
+              className="rounded-xl px-5 py-2.5 text-sm font-semibold transition oc-btn-primary"
             >
               View All Integrations
             </Link>
@@ -272,7 +272,7 @@ export default function Home() {
               href="https://openclaw.ai/integrations"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-xl border border-cyan-300/40 px-5 py-2.5 text-sm font-semibold oc-accent transition hover:bg-cyan-300/10"
+              className="rounded-xl px-5 py-2.5 text-sm font-semibold oc-btn-secondary oc-accent transition"
             >
               Reference: openclaw.ai/integrations
             </a>
@@ -329,7 +329,7 @@ export default function Home() {
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {steps.map((s) => (
               <article key={s.number} className="rounded-2xl oc-surface p-6">
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-cyan-300 font-bold text-slate-900">
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--coral-bright)] font-bold text-white">
                   {s.number}
                 </div>
                 <h3 className="text-2xl font-bold">{s.title}</h3>
@@ -431,7 +431,7 @@ export default function Home() {
               <Link
                 key={item.title}
                 href={item.href}
-                className="group flex items-center justify-between rounded-xl oc-surface px-5 py-4 transition hover:-translate-y-0.5 hover:border-cyan-300/40 hover:bg-slate-200 dark:hover:bg-white/[0.06]"
+                className="group flex items-center justify-between rounded-xl oc-surface px-5 py-4 transition hover:-translate-y-0.5 hover:border-[color:var(--coral-bright)] hover:bg-slate-200 dark:hover:bg-white/[0.06]"
               >
                 <span className="font-medium">{item.title}</span>
                 <span className="oc-accent transition-transform group-hover:translate-x-1">→</span>
@@ -463,7 +463,7 @@ export default function Home() {
           </p>
           <a
             href="https://cal.com"
-            className="mt-8 inline-block rounded-xl bg-cyan-300 px-6 py-3 font-semibold text-slate-900 transition hover:bg-cyan-200"
+            className="mt-8 inline-block rounded-xl px-6 py-3 font-semibold transition oc-btn-primary"
           >
             Book a Discovery Call
           </a>

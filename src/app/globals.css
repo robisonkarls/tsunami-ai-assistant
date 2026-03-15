@@ -16,6 +16,11 @@
   --surface-card-strong: rgba(255, 255, 255, 0.95);
   --border-subtle: rgba(15, 23, 42, 0.16);
   --shadow-soft: rgba(11, 18, 32, 0.08);
+  --btn-primary-bg: #ef4b58;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: #de3f4d;
+  --btn-secondary-bg: rgba(255, 255, 255, 0.88);
+  --btn-secondary-text: #0b1220;
 }
 
 .dark {
@@ -32,6 +37,11 @@
   --surface-card-strong: rgba(10, 15, 26, 0.8);
   --border-subtle: rgba(136, 146, 176, 0.15);
   --shadow-soft: rgba(255, 77, 77, 0.15);
+  --btn-primary-bg: #ff4d4d;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: #e63946;
+  --btn-secondary-bg: rgba(10, 15, 26, 0.8);
+  --btn-secondary-text: #f0f4ff;
 }
 
 @theme inline {
@@ -86,5 +96,21 @@ body {
 }
 
 .oc-accent {
-  color: var(--cyan-bright);
+  color: var(--coral-bright);
+}
+
+.oc-btn-primary {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  box-shadow: 0 6px 24px color-mix(in srgb, var(--btn-primary-bg) 35%, transparent);
+}
+
+.oc-btn-primary:hover {
+  background: var(--btn-primary-hover);
+}
+
+.oc-btn-secondary {
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border: 1px solid var(--border-subtle);
 }

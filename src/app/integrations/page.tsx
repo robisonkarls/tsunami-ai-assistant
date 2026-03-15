@@ -180,7 +180,7 @@ export default function IntegrationsPage() {
       <section className="relative overflow-hidden oc-section py-20">
         <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-500/20 blur-3xl" />
         <div className="relative mx-auto max-w-6xl px-6 text-center">
-          <p className="inline-block rounded-full border border-cyan-300/30 bg-cyan-400/10 px-4 py-1 text-sm font-semibold oc-accent">
+          <p className="inline-block rounded-full border border-[color:var(--coral-bright)]/30 bg-[color:var(--coral-bright)]/10 px-4 py-1 text-sm font-semibold oc-accent">
             Integrations
           </p>
           <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-7xl">⟩ Works With Everything</h1>
@@ -191,7 +191,7 @@ export default function IntegrationsPage() {
             <ThemeToggle />
             <Link
               href="/"
-              className="rounded-xl bg-cyan-300 px-5 py-2.5 text-sm font-semibold text-slate-900 transition hover:bg-cyan-200"
+              className="rounded-xl px-5 py-2.5 text-sm font-semibold transition oc-btn-primary"
             >
               ← Back to Home
             </Link>
@@ -199,7 +199,7 @@ export default function IntegrationsPage() {
               href="https://openclaw.ai/integrations"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-xl border border-cyan-300/40 px-5 py-2.5 text-sm font-semibold oc-accent transition hover:bg-cyan-300/10"
+              className="rounded-xl px-5 py-2.5 text-sm font-semibold oc-btn-secondary oc-accent transition"
             >
               Open Official Integrations Page
             </a>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { AppThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tsunami AI Assistant Services | Calgary",
+  title: "OpenClawYYC | Calgary",
   description:
-    "White-glove AI assistant deployment and managed care for founders and executive teams in Calgary.",
+    "OpenClawYYC provides AI assistant deployment and managed operations for Calgary teams.",
 };
 
 export default function RootLayout({
@@ -24,11 +25,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <AppThemeProvider>{children}</AppThemeProvider>
       </body>
     </html>
   );

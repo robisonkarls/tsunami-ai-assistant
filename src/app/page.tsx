@@ -1,156 +1,158 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ThemeToggle } from "@/components/theme-toggle";
 import {
-  SiGmail,
-  SiGooglecalendar,
-  SiSlack,
-  SiImessage,
   SiWhatsapp,
-  SiNotion,
-  SiGoogledrive,
-  SiZoom,
-  SiHubspot,
-  SiSalesforce,
+  SiTelegram,
+  SiDiscord,
+  SiSlack,
+  SiSignal,
+  SiImessage,
+  SiAnthropic,
+  SiOpenai,
+  SiSpotify,
+  SiPhilipshue,
+  SiObsidian,
+  SiX,
+  SiGooglechrome,
+  SiGmail,
   SiGithub,
-  SiGooglesheets,
 } from "react-icons/si";
-import { FaMicrosoft } from "react-icons/fa6";
+
+const integrations = [
+  { name: "WhatsApp", icon: SiWhatsapp, color: "text-[#25D366]" },
+  { name: "Telegram", icon: SiTelegram, color: "text-[#26A5E4]" },
+  { name: "Discord", icon: SiDiscord, color: "text-[#5865F2]" },
+  { name: "Slack", icon: SiSlack, color: "text-[#E01E5A]" },
+  { name: "Signal", icon: SiSignal, color: "text-[#3A76F0]" },
+  { name: "iMessage", icon: SiImessage, color: "text-[#34C759]" },
+  { name: "Claude", icon: SiAnthropic, color: "text-[#D97706]" },
+  { name: "GPT", icon: SiOpenai, color: "text-[#10A37F]" },
+  { name: "Spotify", icon: SiSpotify, color: "text-[#1DB954]" },
+  { name: "Hue", icon: SiPhilipshue, color: "text-[#F59E0B]" },
+  { name: "Obsidian", icon: SiObsidian, color: "text-[#7C3AED]" },
+  { name: "Twitter", icon: SiX, color: "text-[color:var(--text-secondary)]" },
+  { name: "Browser", icon: SiGooglechrome, color: "text-[#FBBF24]" },
+  { name: "Gmail", icon: SiGmail, color: "text-[#EA4335]" },
+  { name: "GitHub", icon: SiGithub, color: "text-[color:var(--text-secondary)]" },
+];
 
 const builtFor = [
   {
     title: "Founders & CEOs",
-    body: "Inbox overload, calendar chaos, and too many follow-ups slipping through the cracks.",
+    body: "Drowning in email, calendar chaos, and high-context follow-ups. Need leverage now, not another software project.",
   },
   {
-    title: "Executive teams",
-    body: "CFO, Head of Sales, EA, and Ops leaders who need role-based assistants with clean boundaries.",
+    title: "Executive Teams",
+    body: "CFO, Head of Sales, EA, and Ops teams each need role-specific assistants with clear boundaries and reliable execution.",
   },
   {
-    title: "Agencies & studios",
-    body: "Client reporting, project coordination, and recurring communications handled proactively.",
+    title: "Agencies & Studios",
+    body: "Client updates, reporting cadence, and project operations can be monitored and orchestrated proactively.",
   },
   {
-    title: "Investors & operators",
-    body: "Pipeline updates, portfolio check-ins, and recurring briefings without manual babysitting.",
+    title: "Investors & Operators",
+    body: "Deal flow tracking, portfolio updates, and recurring communication pipelines run continuously in the background.",
   },
 ];
 
-const timeline = [
+const alwaysOn = [
   {
     time: "Every 30 min",
-    action:
-      "Reviews key inboxes, highlights urgent messages, and drafts context-aware replies for approval.",
+    action: "Scans key inboxes, flags urgent messages, and drafts replies for review.",
   },
   {
     time: "9:00 AM daily",
-    action:
-      "Delivers a leadership briefing: meetings, attendee context, prep notes, and priority actions.",
+    action: "Sends a briefing with meetings, attendee context, prep notes, and priorities.",
   },
   {
     time: "On demand",
-    action:
-      "Natural language requests trigger real actions (e.g., ‘I’m 10 minutes late’ → notify + reschedule).",
+    action: "Natural language requests trigger actions like notifications, rescheduling, and workflow execution.",
   },
   {
     time: "Ongoing",
-    action:
-      "Monitors collaboration channels, summarizes threads, and escalates what actually needs attention.",
+    action: "Monitors channels, summarizes threads, and surfaces what actually matters.",
   },
 ];
 
-const howItWorks = [
+const steps = [
   {
-    step: "1",
+    number: "1",
     title: "Kickoff call",
-    body: "We define your outcomes, map integrations (email, calendar, CRM, chat), and prioritize high-impact workflows.",
+    body: "We map goals, integrations (email, calendar, CRM, messaging), and define your first high-impact workflows.",
   },
   {
-    step: "2",
+    number: "2",
     title: "Deploy & harden",
-    body: "We provision infrastructure, install OpenClaw, connect integrations securely, and apply hardening controls before launch.",
+    body: "We provision infrastructure, install OpenClaw, connect tools, and apply security controls before launch.",
   },
   {
-    step: "3",
+    number: "3",
     title: "14-day hypercare",
-    body: "We tune behavior, adjust permissions as trust grows, resolve edge cases, and stabilize operations with direct support.",
+    body: "We tune behavior, expand permissions as trust grows, fix edge cases, and stabilize execution quality.",
   },
 ];
 
 const whyUs = [
-  "OpenClaw is powerful, but production setup + security hardening is where most teams get stuck.",
-  "We handle deployment, integration reliability, updates, and drift so your team gets leverage quickly.",
-  "We implement least-privilege by default and expand access only as confidence grows.",
+  "OpenClaw is powerful, but secure production setup is where most teams stall.",
+  "DIY installs often miss permission controls, revocation paths, and operational guardrails.",
+  "We deliver secure deployment and ongoing care so your team gets leverage instead of more maintenance overhead.",
 ];
 
 const security = [
-  "Least-privilege access and staged trust expansion",
-  "Sandboxed execution model and host-level hardening",
-  "Integration revocation paths and operational safeguards",
-  "Update and maintenance procedures to reduce configuration drift",
+  "Least-privilege permissions by default",
+  "Sandboxed execution boundaries",
+  "Controlled integration access and revoke paths",
+  "Staged trust expansion and operational policy tuning",
 ];
 
 const afterPurchase = [
   {
     label: "Within 48 hours",
-    body: "We schedule kickoff and open your private implementation channel.",
+    body: "We schedule kickoff and open your implementation channel.",
   },
   {
     label: "Kickoff session",
-    body: "20–45 minute requirements workshop covering goals, tools, and boundaries.",
+    body: "20–45 minute requirements workshop: goals, tools, priorities.",
   },
   {
-    label: "Live setup",
-    body: "1–3 hour implementation session. Most teams go live same day.",
+    label: "Live setup session",
+    body: "1–3 hour implementation; most teams go live same day.",
   },
 ];
 
 const faqs = [
   {
     q: "What is OpenClaw?",
-    a: "OpenClaw is an open-source always-on AI assistant platform that can triage communication, schedule actions, and run workflows across connected tools.",
+    a: "An open-source always-on assistant platform that can monitor workflows, triage communication, and execute approved actions across connected tools.",
   },
   {
     q: "Do I need to be technical?",
-    a: "No. We handle setup, security hardening, integrations, testing, and optimization. Your team uses the assistant through familiar chat channels.",
+    a: "No. We handle setup, hardening, integrations, and optimization. Your team interacts through familiar chat channels.",
   },
   {
-    q: "Can I set this up myself?",
-    a: "Yes, but most DIY installs miss key controls around permissions, revocation, and operational safety. We make it production-ready from day one.",
+    q: "Can’t we just set it up ourselves?",
+    a: "You can, but most self-installs miss security and operational controls. We make it production-ready and support it long term.",
   },
   {
-    q: "What is included in implementation?",
-    a: "Infrastructure provisioning, OpenClaw deployment, security baseline, integration wiring, up to three core workflows, documentation, and 14-day hypercare.",
-  },
-  {
-    q: "What happens after I pay?",
-    a: "We contact you within 48 hours, run kickoff, then complete a live setup session (typically 1–3 hours) so you can go live quickly.",
-  },
-  {
-    q: "Is OpenClaw safe to run with business data?",
-    a: "It can be, if deployed correctly. We start with least privilege, apply sandboxing and hardening, and only expand permissions as trust grows.",
+    q: "What’s included in implementation?",
+    a: "Provisioning, deployment, security baseline, integrations, core workflows, documentation, and hypercare.",
   },
   {
     q: "What if the bot goes rogue?",
-    a: "We implement safeguards: read-first permissions, strict execution boundaries, revocation controls, and staged trust policies to reduce risk.",
+    a: "We start with minimal permissions, enforce boundaries, and implement revocation + staged trust controls.",
   },
   {
     q: "Do you support multi-agent deployments?",
-    a: "Yes. Most teams run 2–6 role-specific assistants (e.g., CEO, Sales, Finance, EA) with clear identity boundaries.",
-  },
-  {
-    q: "What about ongoing maintenance?",
-    a: "Managed care covers updates, integration health, token lifecycle issues, workflow drift, and support escalation.",
+    a: "Yes. Common setups include CEO, Sales, Finance, and EA assistants with role boundaries.",
   },
   {
     q: "VPS or Mac Mini?",
-    a: "Most teams choose VPS for cost and maintainability. Mac Mini is useful when local hardware or Apple-specific workflows are required.",
+    a: "Most teams choose VPS for maintainability and cost. Mac Mini is useful for local/Apple-specific workflows.",
   },
   {
-    q: "How much does setup usually cost?",
-    a: "Cost depends on complexity, integrations, and workflow count. We scope this in kickoff and provide a clear implementation plan before build.",
-  },
-  {
-    q: "Do you work only in Calgary?",
-    a: "We are Calgary-first and remote-capable. We can support teams across the region and beyond, with local context for Calgary workflows.",
+    q: "What about ongoing maintenance?",
+    a: "Managed care handles updates, integration reliability, drift, and support escalation.",
   },
 ];
 
@@ -177,293 +179,292 @@ const cities = [
   "Redwood Meadows",
 ];
 
+const quotes = [
+  "It feels like hiring an employee rather than opening another chat window.",
+  "The hardening and setup quality alone was worth it.",
+  "This is the first AI assistant setup that feels operationally real.",
+  "We got same-day value with a clear roadmap for expansion.",
+];
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
-      <section className="relative overflow-hidden bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-900 text-white">
-        <div className="absolute -left-20 top-10 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
-        <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-cyan-300/10 blur-3xl" />
-        <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-28">
-          <p className="mb-4 inline-block rounded-full bg-white/20 px-4 py-1 text-sm font-semibold">
-            White-Glove OpenClaw Deployment • Calgary Region
+    <main className="min-h-screen oc-page">
+      <header className="sticky top-0 z-20 border-b border-[color:var(--border-subtle)] bg-[color:var(--surface-card)]/90 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-6 py-4">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/openclaw-logo-text.png"
+              alt="OpenClaw"
+              width={140}
+              height={28}
+              className="h-6 w-auto"
+            />
+            <span className="text-xs uppercase tracking-wider oc-accent">OpenClawYYC</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <Link
+            href="https://cal.com/robison-custodio/15min"
+            className="rounded-xl px-4 py-2 text-sm font-semibold oc-btn-secondary oc-accent transition hover:-translate-y-0.5"
+          >
+            Book a Call
+          </Link>
+          </div>
+        </div>
+      </header>
+
+      <section className="relative overflow-hidden oc-section">
+        <div className="absolute -top-20 left-1/2 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-[color:var(--coral-bright)]/15 blur-3xl" />
+        <div className="absolute right-0 top-20 h-80 w-80 rounded-full bg-[color:var(--cyan-bright)]/20 blur-3xl" />
+
+        <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
+          <p className="inline-block rounded-full border border-[color:var(--coral-bright)]/30 bg-[color:var(--coral-bright)]/10 px-4 py-1 text-sm font-semibold oc-accent">
+            The AI that actually does things.
           </p>
-          <h1 className="max-w-5xl text-4xl font-bold leading-tight md:text-6xl">
-            AI Assistant Services for Calgary Teams — Deployed, Secured, and Managed
+          <h1 className="mt-6 max-w-5xl text-4xl font-bold leading-tight tracking-tight md:text-5xl">
+            <span className="bg-gradient-to-br from-[color:var(--text-primary)] via-[color:var(--coral-bright)] to-[color:var(--cyan-bright)] bg-clip-text text-transparent">
+              Build an Always-On Executive Assistant Stack for Your Team
+            </span>
           </h1>
-          <p className="mt-6 max-w-4xl text-lg text-blue-100 md:text-xl">
-            We design and operate always-on OpenClaw assistants for founders and executive teams, with security-first setup, real integrations, and ongoing support.
+          <p className="mt-6 max-w-3xl text-base oc-text-secondary md:text-lg">
+            Clears inboxes, sends follow-ups, manages calendars, and runs proactive workflows — all from chat apps your team already uses.
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a href="#contact" className="rounded-xl bg-white px-6 py-3 font-semibold text-blue-700 shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-blue-50">Book a Call</a>
-            <a href="#how-it-works" className="rounded-xl border-2 border-white/90 px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-blue-700">How it works</a>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link
+              href="https://cal.com/robison-custodio/15min"
+              className="rounded-xl px-6 py-3 font-semibold transition hover:-translate-y-0.5 oc-btn-primary"
+            >
+              Start Deployment
+            </Link>
+            <Link
+              href="#how-it-works"
+              className="rounded-xl border border-[color:var(--border-subtle)] px-6 py-3 font-semibold oc-text-secondary transition hover:-translate-y-0.5 hover:bg-[color:var(--surface-card-strong)]"
+            >
+              See How It Works
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-slate-200/70 bg-white/70 py-10 backdrop-blur">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="flex flex-col items-center gap-4 text-center">
-            <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Powered by OpenClaw Ecosystem</p>
-            <Image src="/openclaw-logo-text.png" alt="OpenClaw" width={170} height={32} className="h-6 w-auto" />
-          </div>
-
-          <div className="mt-8 rounded-3xl border border-slate-200/70 bg-white p-6 shadow-sm md:p-8">
-            <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-              <div className="text-center md:text-left">
-                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Connects to</p>
-                <p className="mt-2 text-3xl font-bold text-indigo-700">+10,000</p>
-              </div>
-              <div className="grid w-full max-w-4xl grid-cols-2 gap-3 text-sm font-medium text-slate-700 sm:grid-cols-3 md:grid-cols-4">
-                {[
-                  { name: "Gmail", icon: SiGmail },
-                  { name: "Google Calendar", icon: SiGooglecalendar },
-                  { name: "Outlook", icon: FaMicrosoft },
-                  { name: "Slack", icon: SiSlack },
-                  { name: "iMessage", icon: SiImessage },
-                  { name: "WhatsApp", icon: SiWhatsapp },
-                  { name: "Notion", icon: SiNotion },
-                  { name: "Google Drive", icon: SiGoogledrive },
-                  { name: "Zoom", icon: SiZoom },
-                  { name: "HubSpot", icon: SiHubspot },
-                  { name: "Salesforce", icon: SiSalesforce },
-                  { name: "GitHub", icon: SiGithub },
-                  { name: "Google Sheets", icon: SiGooglesheets },
-                ].map(({ name, icon: IconComponent }) => (
-                  <div key={name} className="flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-center transition hover:bg-white">
-                    <IconComponent className="h-4 w-4 text-indigo-700" aria-hidden="true" />
-                    <span>{name}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 py-20">
-        <h2 className="text-3xl font-bold md:text-4xl">Built for</h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {builtFor.map((item) => (
-            <article key={item.title} className="rounded-3xl border border-slate-200/70 bg-white p-7 shadow-sm transition hover:shadow-md">
-              <h3 className="text-xl font-semibold text-slate-900">{item.title}</h3>
-              <p className="mt-3 text-slate-600 leading-relaxed">{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-3xl font-bold md:text-4xl">Always On, Always Working</h2>
-          <p className="mt-4 max-w-4xl text-lg text-slate-600 leading-relaxed">
-            Unlike chat-only tools, your OpenClaw agent runs 24/7 on dedicated infrastructure. It wakes up every 30 minutes, checks your email, calendar, and connected tools, then takes action without waiting for manual prompting.
-          </p>
-
-          <div className="mt-10 space-y-4">
-            {timeline.map((item) => (
-              <div key={item.time} className="rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm">
-                <p className="text-sm font-semibold uppercase tracking-wide text-indigo-700">{item.time}</p>
-                <p className="mt-2 text-slate-700">{item.action}</p>
+      <section className="oc-section bg-[color:var(--surface-card)]/50 py-14">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">⟩ Works With Everything</h2>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            {integrations.map(({ name, icon: Icon, color }) => (
+              <div
+                key={name}
+                title={name}
+                aria-label={name}
+                className="rounded-xl oc-surface p-3"
+              >
+                <Icon className={`h-6 w-6 ${color}`} aria-hidden="true" />
               </div>
             ))}
           </div>
-
-          <p className="mt-8 max-w-4xl text-slate-600">
-            Your team can chat with the assistant via Telegram, Slack, WhatsApp, or Discord — no technical background required.
-          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="/integrations"
+              className="rounded-xl px-5 py-2.5 text-sm font-semibold transition oc-btn-primary"
+            >
+              View All Integrations
+            </Link>
+            <a
+              href="https://openclaw.ai/integrations"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl px-5 py-2.5 text-sm font-semibold oc-btn-secondary oc-accent transition"
+            >
+              Reference: openclaw.ai/integrations
+            </a>
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <h2 className="text-3xl font-bold md:text-4xl">What’s an Executive Agent?</h2>
-        <p className="mt-4 max-w-4xl text-slate-600 leading-relaxed">
-          One executive agent is one OpenClaw instance configured around one primary operational identity (e.g., CEO, CFO, Head of Sales, EA). This keeps pricing fair and security boundaries clear. Most teams run multiple role-specific agents that coordinate through structured workflows.
-        </p>
-      </section>
-
-      <section id="how-it-works" className="bg-white py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-3xl font-bold md:text-4xl">How it works</h2>
-          <div className="mt-10 space-y-6">
-            {howItWorks.map((item) => (
-              <article key={item.step} className="rounded-3xl border border-slate-200/70 bg-white p-8 shadow-sm">
-                <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-indigo-700 text-lg font-bold text-white">{item.step}</div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-slate-900">{item.title}</h3>
-                    <p className="mt-3 text-lg leading-relaxed text-slate-700">{item.body}</p>
-                  </div>
-                </div>
+      <section className="oc-section py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">Built for</h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {builtFor.map((item) => (
+              <article key={item.title} className="rounded-2xl oc-surface p-6">
+                <h3 className="text-xl font-semibold">{item.title}</h3>
+                <p className="mt-3 oc-text-secondary">{item.body}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <h2 className="text-3xl font-bold md:text-4xl">Why teams hire us</h2>
-        <div className="mt-8 space-y-3">
-          {whyUs.map((line) => (
-            <div key={line} className="rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm text-slate-700">• {line}</div>
-          ))}
+      <section className="oc-section py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">Always on, always working</h2>
+          <p className="mt-4 max-w-4xl oc-text-secondary">
+            Your assistant runs 24/7 on dedicated infrastructure. It proactively checks key systems and takes action — without waiting for prompts.
+          </p>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {alwaysOn.map((item) => (
+              <div key={item.time} className="rounded-2xl oc-surface p-5">
+                <p className="text-sm font-semibold uppercase tracking-wide oc-accent">{item.time}</p>
+                <p className="mt-2 oc-text-secondary">{item.action}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 oc-text-secondary">
+            Message your assistant via Telegram, Slack, WhatsApp, or Discord — no technical setup required for day-to-day use.
+          </p>
         </div>
       </section>
 
-      <section className="bg-white py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-3xl font-bold md:text-4xl">What people are saying</h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {[
-              "It feels like hiring an employee rather than opening another chat window.",
-              "You’re solving a problem that people like me probably wouldn’t take the time to solve ourselves.",
-              "The hardening alone was worth it.",
-              "Super helpful in making sense of OpenClaw, integrations, memory, and workflows.",
-            ].map((quote) => (
-              <blockquote key={quote} className="rounded-2xl border border-slate-200/70 bg-white p-5 text-slate-700 shadow-sm">
-                “{quote}”
+      <section className="oc-section py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">What&apos;s an Executive Agent?</h2>
+          <p className="mt-4 max-w-5xl oc-text-secondary">
+            One Executive Agent equals one primary identity boundary (CEO, Sales, Finance, EA, etc.). Most teams deploy 2–6 assistants that coordinate through workflows while preserving role-specific access.
+          </p>
+        </div>
+      </section>
+
+      <section id="how-it-works" className="oc-section py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">How it works</h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {steps.map((s) => (
+              <article key={s.number} className="rounded-2xl oc-surface p-6">
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--coral-bright)] font-bold text-white">
+                  {s.number}
+                </div>
+                <h3 className="text-xl font-bold">{s.title}</h3>
+                <p className="mt-3 oc-text-secondary">{s.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="oc-section py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">What people are saying</h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {quotes.map((q) => (
+              <blockquote key={q} className="rounded-2xl oc-surface p-6 oc-text-secondary">
+                “{q}”
               </blockquote>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <h2 className="text-3xl font-bold md:text-4xl">Security-first by design</h2>
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          {security.map((item) => (
-            <div key={item} className="rounded-2xl border border-slate-200/70 bg-white p-6 text-slate-700 shadow-sm">✓ {item}</div>
-          ))}
+      <section className="oc-section py-20">
+        <div className="mx-auto grid max-w-7xl gap-6 px-6 md:grid-cols-2">
+          <div>
+            <h2 className="text-xl font-bold tracking-tight md:text-4xl">Why teams hire us</h2>
+            <div className="mt-6 space-y-3">
+              {whyUs.map((line) => (
+                <div key={line} className="rounded-xl oc-surface p-4 oc-text-secondary">
+                  • {line}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h2 className="text-xl font-bold tracking-tight md:text-4xl">Security-first by design</h2>
+            <div className="mt-6 space-y-3">
+              {security.map((line) => (
+                <div key={line} className="rounded-xl oc-surface p-4 oc-text-secondary">
+                  ✓ {line}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="bg-white py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-3xl font-bold md:text-4xl">After you purchase</h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
+      <section className="oc-section py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">Already running OpenClaw?</h2>
+          <p className="mt-4 max-w-4xl oc-text-secondary">
+            We can audit your existing setup, fix security gaps, improve reliability, and migrate you to managed operations without rebuilding from scratch.
+          </p>
+        </div>
+      </section>
+
+      <section className="oc-section py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">After you purchase</h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
             {afterPurchase.map((item) => (
-              <article key={item.label} className="rounded-3xl border border-slate-200/70 bg-white p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-indigo-700">{item.label}</h3>
-                <p className="mt-3 text-slate-600">{item.body}</p>
+              <article key={item.label} className="rounded-2xl oc-surface p-6">
+                <h3 className="text-lg font-bold oc-accent">{item.label}</h3>
+                <p className="mt-2 oc-text-secondary">{item.body}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="rounded-3xl border border-emerald-200 bg-emerald-50 p-8 shadow-sm">
-          <h2 className="text-3xl font-bold text-green-900">100% satisfaction guarantee</h2>
-          <p className="mt-3 text-green-800">
-            If you’re not happy with the setup, we’ll make it right. We stand behind implementation quality and long-term support.
-          </p>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <h2 className="text-3xl font-bold md:text-4xl">Already running OpenClaw?</h2>
-        <p className="mt-4 max-w-4xl text-slate-600 leading-relaxed">
-          Many teams come with a working install that has security gaps. We audit your setup, fix hardening issues, improve integration safety, and migrate you to managed operations without rebuilding from scratch.
-        </p>
-      </section>
-
-      <section className="bg-white py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-3xl font-bold md:text-4xl">Implementation & pricing notes</h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-              <h3 className="text-xl font-bold text-slate-900">Delivery model</h3>
-              <p className="mt-3 text-slate-600">
-                One-time setup fee with 14-day hypercare. Ongoing support is handled through Managed Care plans.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-              <h3 className="text-xl font-bold text-slate-900">Infrastructure options</h3>
-              <p className="mt-3 text-slate-600">
-                Most teams deploy on cloud VPS for lower cost and easy maintenance. Mac Mini is available for iMessage or local-hardware preference.
-              </p>
-            </div>
+      <section className="oc-section py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">FAQ</h2>
+          <div className="mt-10 space-y-4">
+            {faqs.map((faq) => (
+              <details key={faq.q} className="rounded-xl oc-surface p-5">
+                <summary className="cursor-pointer text-base font-semibold oc-accent">{faq.q}</summary>
+                <p className="mt-3 oc-text-secondary">{faq.a}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <h2 className="text-3xl font-bold md:text-4xl">FAQ</h2>
-        <div className="mt-8 space-y-4">
-          {faqs.map((faq) => (
-            <details key={faq.q} className="rounded-2xl border border-slate-200/70 bg-white p-6 shadow-sm">
-              <summary className="cursor-pointer text-lg font-semibold text-blue-800">{faq.q}</summary>
-              <p className="mt-3 text-slate-600">{faq.a}</p>
-            </details>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="rounded-3xl border border-slate-200/70 bg-white p-8 shadow-sm">
-          <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Learn More</p>
-          <p className="mt-3 max-w-3xl text-slate-600">
-            Deep-dive resources for leadership teams evaluating implementation approach, cost, and operating model.
-          </p>
-          <div className="mt-6 space-y-4">
+      <section className="oc-section py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">Learn more</h2>
+          <div className="mt-10 space-y-4">
             {[
-              {
-                title: "What is OpenClaw?",
-                blurb: "Always-on assistant architecture, capabilities, and practical business use cases.",
-                href: "/learn-more/what-is-openclaw",
-              },
+              { title: "What is OpenClaw?", href: "/learn-more/what-is-openclaw" },
               {
                 title: "OpenClaw vs. hiring an executive assistant",
-                blurb: "Where automation wins, where human support still matters, and how teams combine both.",
                 href: "/learn-more/openclaw-vs-executive-assistant",
               },
-              {
-                title: "How much does OpenClaw setup cost?",
-                blurb: "Key cost drivers: integrations, workflow scope, security controls, and support model.",
-                href: "/learn-more/openclaw-setup-cost",
-              },
-              {
-                title: "What is a Collison Install?",
-                blurb: "Done-for-you implementation model: we show up and deploy everything for you.",
-                href: "/learn-more/collison-install",
-              },
+              { title: "How much does OpenClaw setup cost?", href: "/learn-more/openclaw-setup-cost" },
+              { title: "What is a Collison Install?", href: "/learn-more/collison-install" },
             ].map((item) => (
-              <a
+              <Link
                 key={item.title}
                 href={item.href}
-                className="group flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-indigo-300 hover:bg-white"
+                className="group flex items-center justify-between rounded-xl oc-surface px-5 py-4 transition hover:-translate-y-0.5 hover:border-[color:var(--coral-bright)] hover:bg-[color:var(--surface-card-strong)]"
               >
-                <div>
-                  <p className="font-medium">{item.title}</p>
-                  <p className="mt-1 text-sm text-slate-500">{item.blurb}</p>
-                </div>
-                <span className="text-indigo-700 transition-transform group-hover:translate-x-1">→</span>
-              </a>
+                <span className="font-medium">{item.title}</span>
+                <span className="oc-accent transition-transform group-hover:translate-x-1">→</span>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-3xl font-bold md:text-4xl">Available across Calgary Region</h2>
-          <p className="mt-3 max-w-3xl text-slate-600">
-            Remote-first deployment with optional local support across Calgary and surrounding communities. Don’t see your city? Book a call.
-          </p>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="oc-section py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">Available across Calgary Region</h2>
+          <p className="mt-4 oc-text-secondary">Remote-first deployment with optional local support. Don&apos;t see your city? Book a call.</p>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
             {cities.map((city) => (
-              <div key={city} className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm">{city}</div>
+              <div key={city} className="rounded-lg oc-surface px-3 py-2 text-sm oc-text-secondary">
+                {city}
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="contact" className="relative overflow-hidden bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-900 py-16 text-white">
+      <section id="contact" className="py-20">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">Ready to launch your assistant stack?</h2>
-          <p className="mt-4 text-lg text-blue-100">
-            Book a discovery call and we’ll map integrations, priorities, and your rollout plan.
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">Ready to go live?</h2>
+          <p className="mx-auto mt-4 max-w-2xl oc-text-secondary">
+            We can deploy this stack for your Calgary team with security-first implementation and managed support.
           </p>
-          <a href="https://cal.com" className="mt-8 inline-block rounded-xl bg-white px-6 py-3 font-semibold text-blue-700 shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-blue-50">
+          <a
+            href="https://cal.com/robison-custodio/15min"
+            className="mt-8 inline-block rounded-xl px-6 py-3 font-semibold transition oc-btn-primary"
+          >
             Book a Discovery Call
           </a>
         </div>

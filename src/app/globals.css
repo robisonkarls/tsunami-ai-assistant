@@ -1,8 +1,47 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fcfeff;
+  --foreground: #0b1220;
+  --bg-deep: #fcfeff;
+  --bg-surface: #ffffff;
+  --text-primary: #0b1220;
+  --text-secondary: #2e405c;
+  --text-muted: #5f7290;
+  --coral-bright: #ef4b58;
+  --cyan-bright: #008f87;
+  --surface-card: rgba(255, 255, 255, 0.88);
+  --surface-card-strong: rgba(255, 255, 255, 0.95);
+  --border-subtle: rgba(15, 23, 42, 0.16);
+  --shadow-soft: rgba(11, 18, 32, 0.08);
+  --btn-primary-bg: #ef4b58;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: #de3f4d;
+  --btn-secondary-bg: rgba(255, 255, 255, 0.88);
+  --btn-secondary-text: #0b1220;
+}
+
+.dark {
+  --background: #050810;
+  --foreground: #f0f4ff;
+  --bg-deep: #050810;
+  --bg-surface: #0a0f1a;
+  --text-primary: #f0f4ff;
+  --text-secondary: #8892b0;
+  --text-muted: #5a6480;
+  --coral-bright: #ff4d4d;
+  --cyan-bright: #00e5cc;
+  --surface-card: rgba(10, 15, 26, 0.65);
+  --surface-card-strong: rgba(10, 15, 26, 0.8);
+  --border-subtle: rgba(136, 146, 176, 0.15);
+  --shadow-soft: rgba(255, 77, 77, 0.15);
+  --btn-primary-bg: #ff4d4d;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: #e63946;
+  --btn-secondary-bg: rgba(10, 15, 26, 0.8);
+  --btn-secondary-text: #f0f4ff;
 }
 
 @theme inline {
@@ -12,15 +51,71 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.oc-page {
+  background:
+    radial-gradient(900px 380px at 18% 18%, color-mix(in srgb, var(--coral-bright) 14%, transparent), transparent 60%),
+    radial-gradient(900px 420px at 82% 18%, color-mix(in srgb, var(--cyan-bright) 14%, transparent), transparent 62%),
+    linear-gradient(to bottom, var(--bg-deep), var(--bg-surface));
+  color: var(--text-primary);
+}
+
+.dark .oc-page {
+  background:
+    radial-gradient(900px 380px at 18% 18%, color-mix(in srgb, var(--coral-bright) 18%, transparent), transparent 62%),
+    radial-gradient(900px 420px at 82% 18%, color-mix(in srgb, var(--cyan-bright) 18%, transparent), transparent 64%),
+    radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.65), transparent),
+    radial-gradient(1px 1px at 60px 120px, rgba(255, 255, 255, 0.45), transparent),
+    radial-gradient(1px 1px at 180px 80px, rgba(255, 255, 255, 0.55), transparent),
+    radial-gradient(1px 1px at 300px 180px, rgba(255, 255, 255, 0.4), transparent),
+    linear-gradient(to bottom, #040710, #050810 40%, #0a0f1a);
+  background-size: auto, auto, 340px 220px, 340px 220px, 340px 220px, 340px 220px, auto;
+}
+
+.oc-section {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.oc-surface {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: none;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.oc-surface:hover {
+  box-shadow: 0 6px 24px var(--shadow-soft);
+}
+
+.oc-text-secondary {
+  color: var(--text-secondary);
+}
+
+.oc-text-muted {
+  color: var(--text-muted);
+}
+
+.oc-accent {
+  color: var(--coral-bright);
+}
+
+.oc-btn-primary {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  box-shadow: 0 6px 24px color-mix(in srgb, var(--btn-primary-bg) 35%, transparent);
+}
+
+.oc-btn-primary:hover {
+  background: var(--btn-primary-hover);
+}
+
+.oc-btn-secondary {
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border: 1px solid var(--border-subtle);
 }

@@ -93,6 +93,34 @@ const steps = [
   },
 ];
 
+const pricingPlans = [
+  {
+    title: "Hosted Setup",
+    subtitle: "Recommended",
+    description: "Managed service — we host, harden + 14-day hypercare",
+    price: "$3,000",
+  },
+  {
+    title: "Mac Mini Setup",
+    subtitle: "Remote",
+    description: "iMessage integration + local hardware",
+    price: "$5,000",
+  },
+  {
+    title: "Mac Mini In-Person",
+    subtitle: "Calgary Area only",
+    description: "On-site setup + iMessage",
+    price: "$6,000",
+  },
+  {
+    title: "Add Another Agent",
+    subtitle: "CEO, EA, Sales, Finance",
+    description: "Deploy your exec team",
+    price: "+$1,500",
+    footnote: "each",
+  },
+];
+
 const whyUs = [
   "OpenClaw is powerful, but secure production setup is where most teams stall.",
   "DIY installs often miss permission controls, revocation paths, and operational guardrails.",
@@ -334,6 +362,24 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold">{s.title}</h3>
                 <p className="mt-3 oc-text-secondary">{s.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="oc-section py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-xl font-bold tracking-tight md:text-4xl">Pricing</h2>
+          <p className="mt-4 max-w-3xl oc-text-secondary">Implementation-focused packages tailored to how you want to run OpenClaw.</p>
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {pricingPlans.map((plan) => (
+              <article key={plan.title} className="rounded-2xl oc-surface p-6">
+                <p className="text-xs font-semibold uppercase tracking-wide oc-accent">{plan.subtitle}</p>
+                <h3 className="mt-2 text-xl font-bold">{plan.title}</h3>
+                <p className="mt-3 text-sm oc-text-secondary">{plan.description}</p>
+                <p className="mt-5 text-2xl font-bold">{plan.price}</p>
+                {plan.footnote ? <p className="text-xs uppercase tracking-wide oc-text-muted">{plan.footnote}</p> : null}
               </article>
             ))}
           </div>
